@@ -1,0 +1,887 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"pthread"
+			],
+			[
+				"matri",
+				"matrix_a"
+			],
+			[
+				"ma",
+				"matrixContainer"
+			],
+			[
+				"Matr",
+				"MatrixContainer"
+			],
+			[
+				"Mat",
+				"MatrixContainer"
+			],
+			[
+				"T",
+				"T_MAX"
+			],
+			[
+				"Ma",
+				"MatrixContainer"
+			],
+			[
+				"mat",
+				"matrix_b"
+			],
+			[
+				"matrix",
+				"matrix_a"
+			],
+			[
+				"cloc",
+				"clock"
+			],
+			[
+				"clock",
+				"clock_t"
+			],
+			[
+				"M",
+				"matrix"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"matr",
+				"matrix_c"
+			],
+			[
+				"ini",
+				"initTime"
+			],
+			[
+				"int",
+				"init"
+			],
+			[
+				"MA",
+				"MATRIX_B"
+			],
+			[
+				"opt",
+				"options"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"bur",
+				"burners"
+			],
+			[
+				"ima",
+				"imageDAO"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"conn",
+				"connectionString"
+			],
+			[
+				"be",
+				"beforeEach"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"burn",
+				"burners"
+			],
+			[
+				"message",
+				"messageInterval"
+			],
+			[
+				"mes",
+				"messageInterval"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"in",
+				"included"
+			],
+			[
+				"stri",
+				"strictly"
+			],
+			[
+				"me",
+				"messageInterval"
+			],
+			[
+				"str",
+				"strictly"
+			],
+			[
+				"a",
+				"assert"
+			],
+			[
+				"e",
+				"expect"
+			],
+			[
+				"bio",
+				"biomatic_20i"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"crea",
+				"createFakeBurners"
+			],
+			[
+				"cre",
+				"createFakeBurners"
+			],
+			[
+				"cr",
+				"createFakeBurners"
+			],
+			[
+				"chu",
+				"checksum"
+			],
+			[
+				"reg",
+				"registerRequest"
+			],
+			[
+				"pos",
+				"postReq"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"coo",
+				"cookie"
+			],
+			[
+				"sess",
+				"sessionId"
+			],
+			[
+				"ses",
+				"sessionId"
+			],
+			[
+				"cook",
+				"cookieStr"
+			],
+			[
+				"seria",
+				"serialNr"
+			],
+			[
+				"log",
+				"loginAdmin"
+			],
+			[
+				"get",
+				"getChecksum"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"P",
+				"POSTBurner"
+			],
+			[
+				"bu",
+				"burners"
+			],
+			[
+				"burner",
+				"burnersApi"
+			],
+			[
+				"se",
+				"serialNr"
+			],
+			[
+				"ge",
+				"generate"
+			],
+			[
+				"ran",
+				"randomString"
+			],
+			[
+				"ws",
+				"wsUrl"
+			],
+			[
+				"cl",
+				"clientObject"
+			],
+			[
+				"ser",
+				"serialNr"
+			],
+			[
+				"sock",
+				"socketAPI"
+			],
+			[
+				"soc",
+				"socketAPI"
+			],
+			[
+				"string",
+				"stringify"
+			],
+			[
+				"strin",
+				"stringify"
+			],
+			[
+				"conne",
+				"connectionClosed"
+			],
+			[
+				"error",
+				"errorHandler"
+			],
+			[
+				"im",
+				"imgSize"
+			],
+			[
+				"set",
+				"setImageSize"
+			],
+			[
+				"image",
+				"imagePath"
+			],
+			[
+				"xs",
+				"xsPath"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"bod",
+				"body-parser"
+			],
+			[
+				"conf",
+				"config"
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"uibModal",
+				"uibModalInstance"
+			],
+			[
+				"selec",
+				"selectedItem"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"side",
+				"sidebar"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"coll",
+				"collapseButton"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"pla",
+				"player_init_loop"
+			],
+			[
+				"sta",
+				"start_game_cont"
+			],
+			[
+				"start",
+				"start_game"
+			],
+			[
+				"elem",
+				"element_miss"
+			],
+			[
+				"dow",
+				"down_pressed_ok"
+			],
+			[
+				"do",
+				"down_pressed_ok"
+			],
+			[
+				"In",
+				"inc"
+			],
+			[
+				"add",
+				"add_up"
+			],
+			[
+				"player",
+				"player_init"
+			],
+			[
+				"mov",
+				"move_player_done"
+			],
+			[
+				"move",
+				"move_player_done"
+			],
+			[
+				"rem",
+				"remove_from_screen"
+			],
+			[
+				"fra",
+				"frame_counter"
+			],
+			[
+				"che",
+				"check_if_tp_outer_done"
+			],
+			[
+				"cle",
+				"clear_screen"
+			],
+			[
+				"cmp",
+				"cmpl"
+			],
+			[
+				"fi",
+				"fix_turning_points"
+			],
+			[
+				"not",
+				"not_last_element"
+			],
+			[
+				"tur",
+				"turning_points"
+			],
+			[
+				"chec",
+				"Check_if_tp"
+			],
+			[
+				"tu",
+				"turning_points"
+			],
+			[
+				"no",
+				"no_tp_hit"
+			],
+			[
+				"nr",
+				"nrOfTp"
+			],
+			[
+				"tp",
+				"tpHit"
+			],
+			[
+				"move_player_",
+				"move_player_loop"
+			],
+			[
+				"le",
+				"leal"
+			],
+			[
+				"current",
+				"current_direction"
+			],
+			[
+				"Y",
+				"Y_direction"
+			],
+			[
+				"add_to",
+				"add_to_left"
+			],
+			[
+				"tai",
+				"tail"
+			],
+			[
+				"he",
+				"head"
+			],
+			[
+				"draw",
+				"draw_player_loop_done"
+			],
+			[
+				"dr",
+				"draw_player_loop"
+			],
+			[
+				"Func",
+				"Function"
+			],
+			[
+				"up",
+				"update_head_tail_index"
+			],
+			[
+				"snake",
+				"snake_size"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pak",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 457.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Pthreads/MatrixContainer.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Pthreads/matmulCalc.cpp",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/run",
+		"/ExJobb.sublime-project",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab1/log_sum.sh",
+		"/Users/Henrik/Developer/Softhouse/Emulator/backend/test/burnerTest.js",
+		"/Users/Henrik/Developer/PDFViewer/server.js",
+		"/Users/Henrik/Developer/Softhouse/Emulator/backend/node_modules/burner.js",
+		"/Users/Henrik/Developer/Softhouse/Emulator/backend/registerBurner.js",
+		"/Users/Henrik/Developer/Softhouse/Emulator/backend/api/api.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/PA1418/gaminganywhere/ga/module/Makefile.build",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/ImageView/imageViewController.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/AddAlbum/AddAlbumModal.html",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/Services/HTTPService.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/AddAlbum/AddAlbumController.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/Main/MainController.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/css/style.css",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/package.json",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/config.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/app.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/index.html",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/server.js",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/ImageView/imageView.html",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/Modals/AddAlbumModal.html",
+		"/Users/Henrik/Downloads/startbootstrap-simple-sidebar-1.0.5/css/simple-sidebar.css",
+		"/Users/Henrik/Developer/Nilj/Frontend/WebApp/public/Main/main.html",
+		"/Users/Henrik/Downloads/startbootstrap-simple-sidebar-1.0.5/index.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1431/Project/Collector/Base.lproj/Main.storyboard",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1463/Project 1/temp.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1463/Project1-Nibbles/main.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1463/Lab1/pipe_lab/asdasdasd.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1463/Lab1/untitled",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV2546/dv2546_lab1/dv2546_lab1.vmdk",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/DV1457/webserver/src/test.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV2546/Lab1/VirtualBox VMs/DV2546 lab1/DV2546 lab1.vbox",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV2546/Lab1/vmserver/dv2546_lab1.vmdk",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/makefile",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/lexyacc-code/calc3i.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/testprogs/readme.txt",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/i386-driver.sh",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/testLoop.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/test_file.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/DV1457/webserver/src/server.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/DV1457/webserver/src/conf.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/DV1457/webserver/lab3-config",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/Database/dbs_helpers.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/Database/person.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/Database/orm.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/package.json",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/startup.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/server.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Programming/InkopsLista/API/database.js",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/lexyacc-code/calc3b.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/lib/fact.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/testprogs/harmonic.calc",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/DV1457/webserver/src/http.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/lib/factorial.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/testprogs/fact.calc",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/test_s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/testprogs/fact.calc",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Lab3-DV1457/t_test.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year1/DV1464/Lab3/Mprov64.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year1/DV1464/Lab3/Bibliotekt.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/test1.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/testprogs/gcd.calc",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/lexyacc-code/calc3b.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/i386-driver.sh",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/MA1427/Projekt 2/Uppgift3.m",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/MA1427/Projekt 2/Uppgift5.m",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/test1.a",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Expriment/c++Test/makefile",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/makefile",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/Project/lexyacc-code (1)/calc3b.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab3/test1.s",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/MA1427/Projekt 2/Uppgift1.m",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/readme.txt",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/http.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/lab3-config",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/makefile",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/include/server.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/server.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/test.config",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/include/error.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/error.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/.gitignore",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/wwww/lol.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/server",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/main.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/www/page.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/www/index.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/www/404.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/www/test.html",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/include/helpers.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/helpers.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/client_handler.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/include/client_handler.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Project/webserver/src/makefile",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Testing/headers/servreq.h",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Testing/src/servreq.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Testing/src/main.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab2/Testing/main.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lectures/ex1.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/test-1.sh",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/log_sum.sh",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/test.sh",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/lol.c",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/temp.txt",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/temp1.txt",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year2/DV1466/Labb3/report.txt",
+		"/usr/local/etc/nginx/sites-enabled/test.conf",
+		"/Users/Henrik/IdeaProjects/test/app/authInteceptor.js",
+		"/Users/Henrik/IdeaProjects/test/index.html",
+		"/usr/local/etc/nginx/servers/test.conf",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/UserService.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/routes/authenticate.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/authenticateService.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/Login/loginController.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/index.html",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/Login/login.html",
+		"/Users/Henrik/Programming/MediaLib/WebApp/routes/unprotected_routes.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/routes/protected_routes.js",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/app/app.js",
+		"/Users/Henrik/Programming/test/routes.js",
+		"/Users/Henrik/Programming/test/tokenApp/package.json",
+		"/Users/Henrik/Programming/test/package.json",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/css/plugins/morrins.css",
+		"/Users/Henrik/Programming/MediaLib/WebApp/public/css:style.css"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 115.0,
+		"where_history":
+		[
+			"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/PA1418/gaminganywhere/ga"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"meta",
+			"200",
+			"30",
+			"300",
+			"status",
+			"finder",
+			"ga_init_single_mod",
+			"md",
+			"move_player",
+			"myRand",
+			"<<<<<head",
+			"player_y",
+			"apple_offset",
+			"move_pla",
+			"move_player_done",
+			"tpHit",
+			"remove_from_screen",
+			"strcpy",
+			"exit(EXIT_F",
+			"if(!conf->daemon) {",
+			"if(!c->daemon) {",
+			"conf.",
+			"append_strings",
+			"conf.path",
+			"append",
+			"n",
+			"read_conf",
+			"readConf",
+			"free",
+			"free(file_path",
+			"BASE_DIR",
+			"c.path",
+			"default_dir",
+			"BASE_DIR",
+			"read_fd_set",
+			"active_fd_set",
+			"desc_index",
+			"index",
+			"file_descs",
+			"read_fd_set",
+			"active_fd_set",
+			"index",
+			"read_fd_set",
+			"active_fd_set",
+			"200",
+			"404",
+			"distraction",
+			"</nav>",
+			"/nav"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"conf.path",
+			"c.path",
+			"default_dir",
+			"ready_files",
+			"file_set",
+			"index",
+			"fd_index",
+			"file_set",
+			"ready_set",
+			"file_descs",
+			"desc_index",
+			"ready_file_desc",
+			"active_file_desc"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "asd.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"public/css/style.css"
+			],
+			[
+				"style.css",
+				"public/css/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 132.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
