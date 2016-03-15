@@ -59,20 +59,20 @@ void print_matrix(void) {
 }
 
 int main(int argc, char **argv) {
-
+    /*CLOCK_REALTIME, CLOCK_PROCESS_CPUTIME_ID, CLOCK_THREAD_CPUTIME_ID */
     srand((unsigned) time(NULL));
 
     struct timespec initStart, initEnd;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initStart);
+    clock_gettime(CLOCK_REALTIME, &initStart);
     init_matrix();
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initEnd);
+    clock_gettime(CLOCK_REALTIME, &initEnd);
     printTimespec(initStart, initEnd, "initialize");
 
 
     struct timespec mulStart, mulEnd;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+    clock_gettime(CLOCK_REALTIME, &mulStart);
     matmul_seq();
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+    clock_gettime(CLOCK_REALTIME, &mulEnd);
     printTimespec(mulStart, mulEnd, "matrix multiply");
     
     if(SIZE <= 16) {
