@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pivot",
+				"pivotIndex"
+			],
+			[
+				"pivo",
+				"pivotIndex"
+			],
+			[
 				"pr",
 				"process"
 			],
@@ -506,24 +514,51 @@
 			[
 				"apple",
 				"apple_player_done"
-			],
-			[
-				"app",
-				"apple_head_not_equal"
-			],
-			[
-				"check",
-				"check_player_apple_collision"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "matmul.c",
+			"file": "Experiment/Quicksort/Sequential/quicksort.c",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1379,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <time.h>\n#include <pthread.h>\n\nvoid init(int[], int);\nvoid quicksort(int[], int, int);\nvoid print(int[], int);\nint partition(int[], int, int);\nvoid swap(int[], int, int);\nint pivotIndex(int, int);\nvoid * worker(void *);\n\ntypedef struct {\n	int left;\n	int right;\n} Args;\n\n\n\nint main(int argc, char *argv[]) {\n\n	srand((unsigned) time(NULL));\n	int size = atoi(argv[1]);\n	int nrOfThreads = atoi(argv[2]);\n	int array[size];\n	init(array, size);\n\n	//Unsorted\n	print(array, size);\n	\n	int i = 0, maxSize, left = 0, right = 0;\n	maxSize = size / nrOfThreads;\n	for(;i < nrOfThreads; i++) {\n		if(i > 0 ) {\n			left += maxSize+1;\n		}\n		right += maxSize;\n		Args *args = malloc(sizeof(Args));\n		args->left = left;\n		args->right = right;\n		pthread_create(&tid[threadCounter++], 0, worker, args);   	\n	}\n\n	quicksort(array, 0, size-1);\n\n	//Sorted\n	print(array, size);\n}\n\nvoid * worker(void *arg) {\n\n\n}\n\nvoid init(int array[], int size) {\n\n	int i = 0;\n	for(; i < size; i++) {\n		array[i] = rand() % 10;\n	}\n}\n\nvoid print(int array[], int size) {\n\n	int i = 0;\n	for(; i < size; i++) {\n		printf(\"%d\\n\", array[i]);\n	}\n\n	printf(\"\\n\");\n}\n\nvoid quicksort(int array[], int left, int right) {\n\n	if(left < right) {\n		int p = partition(array, left, right);\n		quicksort(array, left, p);\n		quicksort(array, p+1, right);\n	}\n}\n\nint partition(int array[], int left, int right) {\n\n	int pi = pivotIndex(left, right);\n	int pivot = array[pi];\n	int i = left - 1;\n	int j = right + 1;\n	do {\n		do {\n			i++;\n		} while(array[i] < pivot);\n\n		do {\n			j--;\n		} while(array[j] > pivot);\n\n		if (i >= j) {\n			return j;\n		}\n\n		swap(array, i, j);\n\n	} while(1);\n}\n\nvoid swap(int array[], int from, int to) {\n\n	int temp = array[to];\n	array[to] = array[from];\n	array[from] = temp;\n\n}\n\nint pivotIndex(int left, int right) {\n	return ((right - left) / 2) + left;\n}",
+			"file": "Experiment/Quicksort/Pthreads/quicksort.c",
+			"file_size": 1815,
+			"file_write_time": 131039884540000000,
+			"settings":
+			{
+				"buffer_size": 1849,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Experiment/MatrixMul/Pthreads/matmul_pthread.c",
+			"settings":
+			{
+				"buffer_size": 2316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Experiment/Quicksort/Sequential/Makefile",
+			"settings":
+			{
+				"buffer_size": 32,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Experiment/Quicksort/Pthreads/Makefile",
+			"settings":
+			{
+				"buffer_size": 31,
 				"line_ending": "Unix"
 			}
 		}
@@ -573,12 +608,18 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Seq"
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Pthreads",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Seq",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort/Pthreads",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort/Sequential"
 	],
 	"file_history":
 	[
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/matmul.c",
 		"/ExJobb.sublime-project",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/DV1457/Lab1/log_sum.sh",
 		"/Users/Henrik/Developer/Softhouse/Emulator/backend/test/burnerTest.js",
@@ -800,36 +841,151 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "matmul.c",
+					"file": "Experiment/Quicksort/Sequential/quicksort.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1379,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
+								1377,
 								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Experiment/Quicksort/Pthreads/quicksort.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Experiment/MatrixMul/Pthreads/matmul_pthread.c",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Experiment/Quicksort/Sequential/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Experiment/Quicksort/Pthreads/Makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

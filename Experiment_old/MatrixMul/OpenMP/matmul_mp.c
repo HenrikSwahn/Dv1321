@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <omp.h>
 
 #define SIZE 2048
 
@@ -9,7 +10,6 @@ static double b[SIZE][SIZE];
 static double c[SIZE][SIZE];
 
 void init_matrix(void) {
-
     int i, j;
 
     for (i = 0; i < SIZE; i++)
@@ -23,17 +23,20 @@ void matmul_seq() {
 
     int i, j, k;
 
-    for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            c[i][j] = 0.0;
-            for (k = 0; k < SIZE; k++)
-                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+    #pragma omp parallel shared(a,b,c) private(i,j,k) num_threads(4)
+    {   
+        #pragma omp for schedule (static)
+        for (i = 0; i < SIZE; i++) {
+            for (j = 0; j < SIZE; j++) {
+                c[i][j] = 0.0;
+                for (k = 0; k < SIZE; k++)
+                    c[i][j] = c[i][j] + a[i][k] * b[k][j];
+            }
         }
     }
 }
 
 void print_matrix(void) {
-
     int i, j;
 
     printf("Matrix A\n");
@@ -62,8 +65,9 @@ void print_matrix(void) {
 }
 
 int main(int argc, char **argv) {
-
+    /*CLOCK_REALTIME, CLOCK_PROCESS_CPUTIME_ID, CLOCK_THREAD_CPUTIME_ID */
     srand((unsigned) time(NULL));
+
     struct timespec initStart, initEnd;
     clock_gettime(CLOCK_REALTIME, &initStart);
     init_matrix();
@@ -81,4 +85,3 @@ int main(int argc, char **argv) {
         print_matrix();
     }
 }
-

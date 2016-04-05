@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define SIZE 1024
+#define SIZE 2048
 #define MAX_THREADS 4
 
 static double a[SIZE][SIZE];
@@ -39,9 +39,7 @@ static void matmul_par() {
 		args->startX = xCounter;
 		
 		xCounter += SIZE/MAX_THREADS;
-		if(xCounter == SIZE) {
-			xCounter = 0;
-		}
+	
 		
 		pthread_create(&tid[threadCounter++], 0, worker, args);
 	} 
