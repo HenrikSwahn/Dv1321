@@ -7,5 +7,6 @@
 
 struct timespec diff(struct timespec s, struct timespec e);
 void printTimespec(struct timespec s, struct timespec e, char* message);
+void logResult(struct timespec s, struct timespec e);
 
 #endif

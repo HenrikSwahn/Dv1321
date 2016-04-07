@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 2048
+#define SIZE 128
 
 static double a[SIZE][SIZE];
 static double b[SIZE][SIZE];
@@ -71,11 +71,15 @@ int main(int argc, char **argv) {
     printTimespec(initStart, initEnd, "initialize");
 
 
-    struct timespec mulStart, mulEnd;
-    clock_gettime(CLOCK_REALTIME, &mulStart);
-    matmul_seq();
-    clock_gettime(CLOCK_REALTIME, &mulEnd);
-    printTimespec(mulStart, mulEnd, "matrix multiply");
+    int i = 0;
+    for(; i < 100; ++i) {
+        struct timespec mulStart, mulEnd;
+        clock_gettime(CLOCK_REALTIME, &mulStart);
+        matmul_seq();
+        clock_gettime(CLOCK_REALTIME, &mulEnd);
+        printTimespec(mulStart, mulEnd, "matrix multiply");
+        logResult(mulStart,mulEnd);
+    } 
     
     if(SIZE <= 16) {
         print_matrix();

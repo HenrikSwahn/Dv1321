@@ -20,3 +20,10 @@ void printTimespec(struct timespec s, struct timespec e, char* message) {
 
 	printf("Took: %ld:%ld seconds to %s\n", diff(s,e).tv_sec, diff(s,e).tv_nsec, message);
 }
+
+void logResult(struct timespec s, struct timespec e) {
+	FILE *f;
+	f = fopen("./result.txt", "a");
+	fprintf(f,"%ld.%ld\n", diff(s,e).tv_sec, diff(s,e).tv_nsec);
+	fclose(f);
+}
