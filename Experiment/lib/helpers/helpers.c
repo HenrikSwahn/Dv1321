@@ -27,3 +27,7 @@ void logResult(struct timespec s, struct timespec e) {
 	fprintf(f,"%ld.%ld\n", diff(s,e).tv_sec, diff(s,e).tv_nsec);
 	fclose(f);
 }
+
+void removeResultFile() {
+	remove("./result.txt");
+}

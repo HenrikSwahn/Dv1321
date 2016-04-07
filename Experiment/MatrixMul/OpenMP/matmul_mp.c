@@ -70,17 +70,22 @@ int main(int argc, char **argv) {
     
     srand((unsigned) time(NULL));
     struct timespec initStart, initEnd;
-    clock_gettime(CLOCK_REALTIME, &initStart);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initStart);
     init_matrix();
-    clock_gettime(CLOCK_REALTIME, &initEnd);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initEnd);
     printTimespec(initStart, initEnd, "initialize");
 
+    removeResultFile();
 
-    struct timespec mulStart, mulEnd;
-    clock_gettime(CLOCK_REALTIME, &mulStart);
-    matmul_seq();
-    clock_gettime(CLOCK_REALTIME, &mulEnd);
-    printTimespec(mulStart, mulEnd, "matrix multiply");
+    int i = 0;
+    for(;i < 100; ++i) {
+        struct timespec mulStart, mulEnd;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+        matmul_seq();
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+        printTimespec(mulStart, mulEnd, "matrix multiply");
+        logResult(mulStart, mulEnd);
+    }
     
     if(SIZE <= 16) {
         print_matrix();
