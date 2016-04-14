@@ -109,9 +109,9 @@ int main(int argc, char **argv) {
     int i = 0;
     for(; i < 50; ++i) {
         struct timespec mulStart, mulEnd;
-        clock_gettime(CLOCK_REALTIME, &mulStart);
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
         matmul_par();
-        clock_gettime(CLOCK_REALTIME, &mulEnd);
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
         printTimespec(mulStart, mulEnd, "matrix multiply");
         logResult(mulStart, mulEnd);
     }
