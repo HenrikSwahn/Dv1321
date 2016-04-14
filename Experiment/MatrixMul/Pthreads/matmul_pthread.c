@@ -3,7 +3,7 @@
 #include <pthread.h>
 
 #define SIZE 32
-#define MAX_THREADS 2
+#define MAX_THREADS 8
 
 static double a[SIZE][SIZE];
 static double b[SIZE][SIZE];
@@ -102,20 +102,16 @@ void print_matrix(void) {
 int main(int argc, char **argv) {
 
     srand((unsigned) time(NULL));
-    struct timespec initStart, initEnd;
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initStart);
     init_matrix();
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &initEnd);
-    printTimespec(initStart, initEnd, "initialize");
 
     removeResultFile();
 
     int i = 0;
-    for(; i < 100; ++i) {
+    for(; i < 50; ++i) {
         struct timespec mulStart, mulEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+        clock_gettime(CLOCK_REALTIME, &mulStart);
         matmul_par();
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+        clock_gettime(CLOCK_REALTIME, &mulEnd);
         printTimespec(mulStart, mulEnd, "matrix multiply");
         logResult(mulStart, mulEnd);
     }
