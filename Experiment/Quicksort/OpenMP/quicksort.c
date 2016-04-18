@@ -15,17 +15,29 @@ int main(int argc, char *argv[]) {
 	srand((unsigned) time(NULL));
 	
 	int size = atoi(argv[1]);
-	int array[size];
-	
-	init(array, size);
+	int i;
+	for(i = 0; i < 10; i++) {
+		
+		int array[size];
+		init(array, size);
 
-	//Unsorted
-	print(array, size);
+		//Unsorted
+		if(size < 32) {
+			print(array, size);
+		}
 	
-	quicksort(array, 0, size-1);
+		struct timespec quickStart, quickEnd;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);	
+		quicksort(array, 0, size-1);
+		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
+        printTimespec(mulStart, mulEnd, "quicksort");
+        logResult(quickStart,quickEnd);
 
-	//Sorted
-	print(array, size);
+		//Sorted
+		if(size < 32) {
+			print(array, size);
+		}
+	}
 }
 
 void init(int array[], int size) {

@@ -26,44 +26,57 @@ int main(int argc, char *argv[]) {
 	int nrOfThreads = atoi(argv[2]);
 	int nrOfSorts = requiredSorts(nrOfThreads);
 	int threadCounter = 0;
-	int requiredThreads = nrOfThreads;
+	removeResultFile();
 
-	int array[size];
-	pthread_t tid[nrOfThreads];
+	int i = 0;
+	for(; i < 10; i++) {
+		int requiredThreads = nrOfThreads;
+		int array[size];
+		pthread_t tid[nrOfThreads];
 
-	init(array, size);
-	
-	//Unsorted
-	print(array, size);
-	
-	int i = 0, maxSize;
-	maxSize = size / nrOfThreads;
-	int left = 0, right = maxSize;
+		init(array, size);
+		
+		//Unsorted
+		if(size < 32) {
+			print(array, size);
+		}
+		
+		int i = 0, maxSize;
+		maxSize = size / nrOfThreads;
+		int left = 0, right = maxSize;
 
-	while(requiredThreads >= 1) {
-		Args *args = malloc(sizeof(Args));
-		args->left = left;
-		args->right = right;
-		args->arr = array;
-		pthread_create(&tid[threadCounter++], 0, worker, args);
+		struct timespec quickStart, quickEnd;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);	
+		while(requiredThreads >= 1) {
+			Args *args = malloc(sizeof(Args));
+			args->left = left;
+			args->right = right;
+			args->arr = array;
+			pthread_create(&tid[threadCounter++], 0, worker, args);
 
-		left += maxSize;
-		right += maxSize;
+			left += maxSize;
+			right += maxSize;
 
-		if(threadCounter == requiredThreads) {
-			for(i = 0; i < nrOfThreads; i++) {
-				pthread_join(tid[i], NULL);
+			if(threadCounter == requiredThreads) {
+				for(i = 0; i < nrOfThreads; i++) {
+					pthread_join(tid[i], NULL);
+				}
+				threadCounter = 0;
+				requiredThreads = requiredThreads / 2;
+				maxSize = maxSize += maxSize;
+				left = 0;
+				right = maxSize;
 			}
-			threadCounter = 0;
-			requiredThreads = requiredThreads / 2;
-			maxSize = maxSize += maxSize;
-			left = 0;
-			right = maxSize;
+		}
+		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
+        printTimespec(mulStart, mulEnd, "quicksort");
+        logResult(quickStart,quickEnd);
+
+		//Sorted
+		if(size < 32) {
+			print(array, size);
 		}
 	}
-
-	//Sorted
-	print(array, size);
 }
 
 void * worker(void *arg) {

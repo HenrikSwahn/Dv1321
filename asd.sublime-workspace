@@ -539,7 +539,7 @@
 			"file": "Experiment/MatrixMul/OpenMP/matmul_mp.c",
 			"settings":
 			{
-				"buffer_size": 2039,
+				"buffer_size": 1833,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "Experiment/MatrixMul/OpenMP/calculate.py",
 			"settings":
 			{
-				"buffer_size": 637,
+				"buffer_size": 319,
 				"line_ending": "Unix"
 			}
 		},
@@ -571,7 +571,7 @@
 			"file": "Experiment/MatrixMul/OpenMP/result.txt",
 			"settings":
 			{
-				"buffer_size": 19,
+				"buffer_size": 16,
 				"line_ending": "Unix"
 			}
 		},
@@ -627,7 +627,7 @@
 			"file": "Experiment/MatrixMul/Pthreads/matmul_pthread.c",
 			"settings":
 			{
-				"buffer_size": 2485,
+				"buffer_size": 2279,
 				"line_ending": "Unix"
 			}
 		},
@@ -699,7 +699,9 @@
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/OpenMP",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Pthreads",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Seq"
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Seq",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort/OpenMP"
 	],
 	"file_history":
 	[
@@ -984,7 +986,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -993,15 +995,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2039,
+						"buffer_size": 1833,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2038,
-								0
+								1578,
+								1578
 							]
 						],
 						"settings":
@@ -1011,7 +1013,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 75.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1023,15 +1025,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 637,
+						"buffer_size": 319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								637,
-								637
+								291,
+								290
 							]
 						],
 						"settings":
@@ -1043,7 +1045,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1099,7 +1101,7 @@
 						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1108,15 +1110,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19,
+						"buffer_size": 16,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								12,
+								12
 							]
 						],
 						"settings":
@@ -1127,7 +1129,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1143,8 +1145,8 @@
 						"selection":
 						[
 							[
-								1865,
-								0
+								366,
+								366
 							]
 						],
 						"settings":
@@ -1154,10 +1156,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 782.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1185,7 +1187,7 @@
 						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1214,7 +1216,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1242,7 +1244,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1258,8 +1260,8 @@
 						"selection":
 						[
 							[
-								969,
-								969
+								312,
+								337
 							]
 						],
 						"settings":
@@ -1268,10 +1270,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 690.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1308,15 +1310,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2485,
+						"buffer_size": 2279,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2483,
-								0
+								2027,
+								2027
 							]
 						],
 						"settings":
@@ -1326,10 +1328,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1357,7 +1359,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
