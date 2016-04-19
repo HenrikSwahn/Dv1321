@@ -3,7 +3,7 @@
 #include <time.h>
 #include <omp.h>
 
-#define SIZE 32
+#define SIZE 10000
 
 static double a[SIZE][SIZE];
 static double b[SIZE][SIZE];
@@ -24,7 +24,7 @@ void matmul_seq() {
 
     int i, j, k;
 
-    #pragma omp parallel shared(a,b,c) private(i,j,k) num_threads(4)
+    #pragma omp parallel shared(a,b,c) private(i,j,k) num_threads(8)
     {   
         #pragma omp for schedule (static)
         for (i = 0; i < SIZE; i++) {
@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
     removeResultFile();
 
     int i = 0;
-    for(;i < 100; ++i) {
+    for(;i < 10; ++i) {
         struct timespec mulStart, mulEnd;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
         matmul_seq();
