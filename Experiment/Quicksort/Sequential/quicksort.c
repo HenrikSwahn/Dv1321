@@ -71,9 +71,9 @@ int main(int argc, char **argv) {
     for(; i < 10; i++) {
     	init();
     	struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);
     	quick_sort(array, 0, MAX_ITEMS-1);
-    	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+    	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
         printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
     }

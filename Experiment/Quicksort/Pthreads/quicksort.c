@@ -122,12 +122,12 @@ void * mergeWorker(void * arg) {
 
 int main(int argc, char **argv) {
     
-    int i = 0;
+    int j = 0;
     removeResultFile();
-    for(; i < 10; i++)
+    for(; j < 10; i++)
 	    init_array();
 		struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);
 		int i = 0;
 		for(; i < MAX_THREADS; i++) {
 			Args * args = malloc(sizeof(* args));
@@ -208,7 +208,7 @@ int main(int argc, char **argv) {
 		args->setSize = SET_SIZE * 4;
 		pthread_create(&tid[0], 0, mergeWorker, args);
 		pthread_join(tid[0], NULL);
-		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
         printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
     }
