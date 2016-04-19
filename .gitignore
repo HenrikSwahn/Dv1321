@@ -4,3 +4,8 @@ Dokument/*
 *.sublime-project
 *.sublime-workspace
 Test/*
+.idea/
+CMakeLists.txt
+Experiment/MatrixMul/Pthreads/calculate.py
+Experiment/Quicksort/Pthreads/result.txt
+Experiment/Quicksort/Sequential/controll.py
