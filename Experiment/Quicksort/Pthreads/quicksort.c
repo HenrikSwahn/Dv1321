@@ -27,12 +27,8 @@ static void print_array(void) {
     int i;
 	
 	for(i = 0; i < MAX_ITEMS; i++) {	       	 
-		if(i % 8 == 0) { 
-		//	printf("---\n");
-		}
 		printf("%d\n", v[i]);
 	}
-
     printf("\n");
 }
 
