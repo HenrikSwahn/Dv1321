@@ -1,106 +1,72 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
-void init(int[], int);
-void quicksort(int[], int, int);
-void print(int[], int);
-int partition(int[], int, int);
-void swap(int[], int, int);
-int pivotIndex(int, int);
+#define KILO (1024)
+#define MEGA (1024*1024)
+#define MAX_ITEMS (64*MEGA)
 
-int main(int argc, char *argv[]) {
+#define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
 
-	srand((unsigned) time(NULL));
-	
-	int size = atoi(argv[1]);
-	removeResultFile();
-	
-	int i;
-	for(i = 0; i < 10; i++) {
-		
-		int array[size];
-		init(array, size);
+static int *array;
 
-		//Unsorted
-		if(size < 32) {
-			print(array, size);
-		}
-	
-		struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);	
-		quicksort(array, 0, size-1);
-		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
-        printTimespec(mulStart, mulEnd, "quicksort");
-        logResult(quickStart,quickEnd);
+static void print() {
+    int i;
 
-		//Sorted
-		if(size < 32) {
-			print(array, size);
-		}
+    for (i = 0; i < MAX_ITEMS; i++) {
+        printf("%d\n", array[i]);
+    }
+    printf("\n");
+}
+
+static void init() {
+    int i;
+
+    array = (int *) malloc(MAX_ITEMS*sizeof(int));
+    for (i = 0; i < MAX_ITEMS; i++) {
+        array[i] = rand();
 	}
 }
 
-void init(int array[], int size) {
+static unsigned partition(int *array, unsigned low, unsigned high, unsigned pivot_index) {
 
-	int i = 0;
-	for(; i < size; i++) {
-		array[i] = rand() % 10;
-	}
+    if (pivot_index != low)
+        swap(array, low, pivot_index);
+
+    pivot_index = low;
+    low++;
+
+    while (low <= high) {
+        if (array[low] <= array[pivot_index])
+            low++;
+        else if (array[high] > array[pivot_index])
+            high--;
+        else
+            swap(array, low, high);
+    }
+
+    if (high != pivot_index)
+        swap(array, pivot_index, high);
+    return high;
 }
 
-void print(int array[], int size) {
+static void quick_sort(int *array, unsigned low, unsigned high) {
+    
+    unsigned pivot;
+    
+    if (low >= high)
+        return;
+    pivot = (low+high)/2;
+    pivot = partition(array, low, high, pivot);
 
-	int i = 0;
-	for(; i < size; i++) {
-		printf("%d\n", array[i]);
-	}
-
-	printf("\n");
+    if (low < pivot)
+        quick_sort(array, low, pivot-1);
+    if (pivot < high)
+        quick_sort(array, pivot+1, high);
 }
 
-void quicksort(int array[], int left, int right) {
-
-	if(left < right) {
-		int p = partition(array, left, right);
-		quicksort(array, left, p);
-		quicksort(array, p+1, right);
-	}
+int main(int argc, char **argv) {
+    init();
+    removeOrderFile();
+    quick_sort(array, 0, MAX_ITEMS-1);
+    logOrder(array, MAX_ITEMS);
 }
-
-int partition(int array[], int left, int right) {
-
-	int pi = pivotIndex(left, right);
-	int pivot = array[pi];
-	int i = left - 1;
-	int j = right + 1;
-	do {
-		do {
-			i++;
-		} while(array[i] < pivot);
-
-		do {
-			j--;
-		} while(array[j] > pivot);
-
-		if (i >= j) {
-			return j;
-		}
-
-		swap(array, i, j);
-
-	} while(1);
-}
-
-void swap(int array[], int from, int to) {
-
-	int temp = array[to];
-	array[to] = array[from];
-	array[from] = temp;
-
-}
-
-int pivotIndex(int left, int right) {
-	return ((right - left) / 2) + left;
-}
-

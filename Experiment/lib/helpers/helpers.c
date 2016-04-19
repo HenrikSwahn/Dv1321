@@ -31,3 +31,17 @@ void logResult(struct timespec s, struct timespec e) {
 void removeResultFile() {
 	remove("./result.txt");
 }
+
+void removeOrderFile() {
+	remove("./order.txt");
+}
+
+void logOrder(int arr[], int size) {
+	FILE *f;
+	f = fopen("./order.txt", "a");
+	int i = 0;
+	for(; i < size; i++) {
+		fprintf(f,"%d\n", arr[i]);
+	}
+	fclose(f);
+}
