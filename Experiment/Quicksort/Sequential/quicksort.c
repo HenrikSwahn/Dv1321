@@ -4,8 +4,8 @@
 
 #define KILO (1024)
 #define MEGA (1024*1024)
-#define MAX_ITEMS (64*MEGA)
-
+//#define MAX_ITEMS (64*MEGA)
+#define MAX_ITEMS 100
 #define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
 
 static int *array;
@@ -72,10 +72,11 @@ int main(int argc, char **argv) {
     for(; i < 10; i++) {
     	init();
     	struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);
+        clock_gettime(CLOCK_REALTIME, &quickStart);
     	quick_sort(array, 0, MAX_ITEMS-1);
-    	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
+    	clock_gettime(CLOCK_REALTIME, &quickEnd);
         printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
     }
+	logOrder(array, MAX_ITEMS);
 }

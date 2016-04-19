@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define KILO (1024)
 #define MEGA (1024*1024)
-#define MAX_ITEMS (64*MEGA)
+//#define MAX_ITEMS (64*MEGA)
+#define MAX_ITEMS 100000000
 #define MAX_THREADS 8
 #define SET_SIZE (MAX_ITEMS/MAX_THREADS)
 #define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
@@ -120,10 +120,10 @@ int main(int argc, char **argv) {
     
     int j = 0;
     removeResultFile();
-    for(; j < 10; j++) {
+	 for(; j < 10; j++) {
 	    init_array();
 		struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);
+        clock_gettime(CLOCK_REALTIME, &quickStart);
 		int i = 0;
 		for(; i < MAX_THREADS; i++) {
 			Args * args = malloc(sizeof(* args));
@@ -204,9 +204,10 @@ int main(int argc, char **argv) {
 		args->setSize = SET_SIZE * 4;
 		pthread_create(&tid[0], 0, mergeWorker, args);
 		pthread_join(tid[0], NULL);
-		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
+		clock_gettime(CLOCK_REALTIME, &quickEnd);
         printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
-    }
+	}
+	logOrder(v, MAX_ITEMS);
 }
 
