@@ -7,6 +7,7 @@
 
 #define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
 
+<<<<<<< HEAD
 static int *array;
 
 static void print() {
@@ -16,6 +17,55 @@ static void print() {
         printf("%d\n", array[i]);
     }
     printf("\n");
+=======
+	srand((unsigned) time(NULL));
+	
+	long size = atoi(argv[1]);
+	removeResultFile();
+	
+	int i;
+	for(i = 0; i < 10; i++) {
+		
+		int * array = malloc(size * sizeof(int));
+		init(array, size);
+
+		//Unsorted
+		if(size < 32) {
+			print(array, size);
+		}
+	
+		struct timespec quickStart, quickEnd;
+	        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);	
+		quicksort(array, 0, size-1);
+		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
+       		printTimespec(quickStart, quickEnd, "quicksort");
+        	logResult(quickStart,quickEnd);
+
+		//Sorted
+		if(size < 32) {
+			print(array, size);
+		}
+		free(array);
+	}
+}
+
+void init(int array[], int size) {
+
+	int i = 0;
+	for(; i < size; i++) {
+		array[i] = rand() % 10;
+	}
+}
+
+void print(int array[], int size) {
+
+	int i = 0;
+	for(; i < size; i++) {
+		printf("%d\n", array[i]);
+	}
+
+	printf("\n");
+>>>>>>> 923a7ff937a383ca366c590914a7fe8194299ce4
 }
 
 static void init() {

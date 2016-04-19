@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define SIZE 32
+#define SIZE 6000
 #define MAX_THREADS 8
 
 static double a[SIZE][SIZE];
@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
     removeResultFile();
 
     int i = 0;
-    for(; i < 50; ++i) {
+    for(; i < 10; ++i) {
         struct timespec mulStart, mulEnd;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
         matmul_par();
