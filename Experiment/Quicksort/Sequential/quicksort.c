@@ -65,10 +65,11 @@ static void quick_sort(int *array, unsigned low, unsigned high) {
 }
 
 int main(int argc, char **argv) {
-    init();
     
     int i = 0;
+    removeResultFile();
     for(; i < 10; i++) {
+    	init();
     	struct timespec quickStart, quickEnd;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
     	quick_sort(array, 0, MAX_ITEMS-1);
