@@ -66,7 +66,14 @@ static void quick_sort(int *array, unsigned low, unsigned high) {
 
 int main(int argc, char **argv) {
     init();
-    removeOrderFile();
-    quick_sort(array, 0, MAX_ITEMS-1);
-    logOrder(array, MAX_ITEMS);
+    
+    int i = 0;
+    for(; i < 10; i++) {
+    	struct timespec quickStart, quickEnd;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulStart);
+    	quick_sort(array, 0, MAX_ITEMS-1);
+    	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &mulEnd);
+        printTimespec(quickStart, quickEnd, "quicksorting");
+        logResult(quickStart,quickEnd);
+    }
 }
