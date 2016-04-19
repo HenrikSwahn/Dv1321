@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
     
     int j = 0;
     removeResultFile();
-    for(; j < 10; i++)
+    for(; j < 10; j++) {
 	    init_array();
 		struct timespec quickStart, quickEnd;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);
