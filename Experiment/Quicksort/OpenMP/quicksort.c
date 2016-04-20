@@ -3,108 +3,87 @@
 #include <time.h>
 #include <omp.h>
 
-void init(int[], int);
-void quicksort(int[], int, int);
-void print(int[], int);
-int partition(int[], int, int);
-void swap(int[], int, int);
-int pivotIndex(int, int);
+#define KILO (1024)
+#define MEGA (1024*1024)
+//#define MAX_ITEMS (64*MEGA)
+#define MAX_ITEMS 100
+#define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
 
-int main(int argc, char *argv[]) {
+static int *array;
 
-	srand((unsigned) time(NULL));
-	
-	int size = atoi(argv[1]);
-	int i;
-	for(i = 0; i < 10; i++) {
-		
-		int array[size];
-		init(array, size);
+static void print() {
+    int i;
 
-		//Unsorted
-		if(size < 32) {
-			print(array, size);
-		}
-	
-		struct timespec quickStart, quickEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickStart);	
-		quicksort(array, 0, size-1);
-		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &quickEnd);
-        printTimespec(mulStart, mulEnd, "quicksort");
+    for (i = 0; i < MAX_ITEMS; i++) {
+        printf("%d\n", array[i]);
+    }
+    printf("\n");
+}
+
+static void init() {
+    int i;
+
+    array = (int *) malloc(MAX_ITEMS*sizeof(int));
+    for (i = 0; i < MAX_ITEMS; i++) {
+        array[i] = rand();
+	}
+}
+
+static unsigned partition(int *array, unsigned low, unsigned high, unsigned pivot_index) {
+
+    if (pivot_index != low)
+        swap(array, low, pivot_index);
+
+    pivot_index = low;
+    low++;
+
+    #pragma omp parallel for
+    for (;low <= high;) {
+        if (array[low] <= array[pivot_index])
+            low++;
+        else if (array[high] > array[pivot_index])
+            high--;
+        else
+            swap(array, low, high);
+    }
+
+    if (high != pivot_index)
+        swap(array, pivot_index, high);
+    return high;
+}
+
+static void quick_sort(int *array, unsigned low, unsigned high) {
+    
+    unsigned pivot;
+    
+    if (low >= high)
+        return;
+    pivot = (low+high)/2;
+    pivot = partition(array, low, high, pivot);
+
+    #pragma omp parallel sections 
+    {
+	    if (low < pivot)
+	    	#pragma omp section
+	        quick_sort(array, low, pivot-1);
+	    if (pivot < high)
+	    	#pragma omp section
+	        quick_sort(array, pivot+1, high);
+	}
+}
+
+int main(int argc, char **argv) {
+    
+    int i = 0;
+    removeResultFile();
+    //for(; i < 10; i++) {
+    	init();
+    	struct timespec quickStart, quickEnd;
+        clock_gettime(CLOCK_REALTIME, &quickStart);
+    	quick_sort(array, 0, MAX_ITEMS-1);
+    	clock_gettime(CLOCK_REALTIME, &quickEnd);
+        printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
-
-		//Sorted
-		if(size < 32) {
-			print(array, size);
-		}
-	}
-}
-
-void init(int array[], int size) {
-
-	int i = 0;
-	for(; i < size; i++) {
-		array[i] = rand() % 10;
-	}
-}
-
-void print(int array[], int size) {
-
-	int i = 0;
-	for(; i < size; i++) {
-		printf("%d\n", array[i]);
-	}
-
-	printf("\n");
-}
-
-void quicksort(int array[], int left, int right) {
-
-	if(left < right) {
-		int p = partition(array, left, right);
-
-		#pragma omp parallel sections 
-		{
-			#pragma omp section
-			quicksort(array, left, p);
-			#pragma omp section
-			quicksort(array, p+1, right);
-		}
-	}
-}
-
-int partition(int array[], int left, int right) {
-
-	int pi = pivotIndex(left, right);
-	int pivot = array[pi];
-	int i = left - 1;
-	int j = right + 1;
-	do {
-		do {
-			i++;
-		} while(array[i] < pivot);
-
-		do {
-			j--;
-		} while(array[j] > pivot);
-
-		if (i >= j) {
-			return j;
-		}
-
-		swap(array, i, j);
-
-	} while(1);
-}
-
-void swap(int array[], int from, int to) {
-
-	int temp = array[to];
-	array[to] = array[from];
-	array[from] = temp;
-
-}
-
-int pivotIndex(int left, int right) {
-	return ((right - left) / 2) + left;
+    //}
+	//logOrder(array, MAX_ITEMS);
 }
