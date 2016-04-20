@@ -37,8 +37,7 @@ static unsigned partition(int *array, unsigned low, unsigned high, unsigned pivo
     pivot_index = low;
     low++;
 
-    #pragma omp parallel for
-    for (;low <= high;) {
+    while (low <= high) {
         if (array[low] <= array[pivot_index])
             low++;
         else if (array[high] > array[pivot_index])
@@ -63,11 +62,12 @@ static void quick_sort(int *array, unsigned low, unsigned high) {
 
     #pragma omp parallel sections 
     {
+    	#pragma omp section
 	    if (low < pivot)
-	    	#pragma omp section
 	        quick_sort(array, low, pivot-1);
+	    #pragma omp section
 	    if (pivot < high)
-	    	#pragma omp section
+	    	
 	        quick_sort(array, pivot+1, high);
 	}
 }
