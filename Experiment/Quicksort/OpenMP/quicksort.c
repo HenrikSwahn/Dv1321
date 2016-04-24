@@ -6,11 +6,10 @@
 #define KILO (1024)
 #define MEGA (1024*1024)
 //#define MAX_ITEMS (64*MEGA)
-#define MAX_ITEMS 100
+#define MAX_ITEMS 10000000
 #define swap(v, a, b) {unsigned tmp; tmp=v[a]; v[a]=v[b]; v[b]=tmp;}
-
+static int counter = 0;
 static int *array;
-
 static void print() {
     int i;
 
@@ -60,23 +59,27 @@ static void quick_sort(int *array, unsigned low, unsigned high) {
     pivot = (low+high)/2;
     pivot = partition(array, low, high, pivot);
 
-    #pragma omp parallel sections 
+    #pragma omp parallel sections num_threads(8)
     {
-    	#pragma omp section
-	    if (low < pivot)
-	        quick_sort(array, low, pivot-1);
-	    #pragma omp section
-	    if (pivot < high)
-	    	
-	        quick_sort(array, pivot+1, high);
+    	#pragma omp section 
+	{
+	    if (low < pivot) {
+	       quick_sort(array, low, pivot-1);
+	    }
 	}
+	#pragma omp section
+	{
+	    if (pivot < high) {
+	        quick_sort(array, pivot+1, high);
+	    }
+        }
+    }
 }
 
-int main(int argc, char **argv) {
-    
+int main(int argc, char **argv) { 
     int i = 0;
     removeResultFile();
-    //for(; i < 10; i++) {
+    for(; i < 10; i++) {
     	init();
     	struct timespec quickStart, quickEnd;
         clock_gettime(CLOCK_REALTIME, &quickStart);
@@ -84,6 +87,6 @@ int main(int argc, char **argv) {
     	clock_gettime(CLOCK_REALTIME, &quickEnd);
         printTimespec(quickStart, quickEnd, "quicksorting");
         logResult(quickStart,quickEnd);
-    //}
-	//logOrder(array, MAX_ITEMS);
+	free(array);
+    }
 }
