@@ -523,7 +523,7 @@
 			"file": "Experiment/Quicksort/Sequential/quicksort.c",
 			"settings":
 			{
-				"buffer_size": 1382,
+				"buffer_size": 1808,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "Experiment/Quicksort/Pthreads/quicksort.c",
 			"settings":
 			{
-				"buffer_size": 2463,
+				"buffer_size": 4836,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "Experiment/MatrixMul/OpenMP/matmul_mp.c",
 			"settings":
 			{
-				"buffer_size": 1833,
+				"buffer_size": 1835,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,15 +547,7 @@
 			"file": "Experiment/MatrixMul/OpenMP/calculate.py",
 			"settings":
 			{
-				"buffer_size": 319,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Experiment/MatrixMul/OpenMP/Makefile",
-			"settings":
-			{
-				"buffer_size": 87,
+				"buffer_size": 354,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,7 +555,7 @@
 			"file": "Experiment/MatrixMul/Pthreads/result.txt",
 			"settings":
 			{
-				"buffer_size": 905,
+				"buffer_size": 148,
 				"line_ending": "Unix"
 			}
 		},
@@ -595,7 +587,7 @@
 			"file": "Experiment/lib/helpers/helpers.c",
 			"settings":
 			{
-				"buffer_size": 723,
+				"buffer_size": 937,
 				"line_ending": "Unix"
 			}
 		},
@@ -603,7 +595,7 @@
 			"file": "Experiment/lib/helpers/helpers.h",
 			"settings":
 			{
-				"buffer_size": 313,
+				"buffer_size": 364,
 				"line_ending": "Unix"
 			}
 		},
@@ -611,7 +603,7 @@
 			"file": "Experiment/Quicksort/OpenMP/quicksort.c",
 			"settings":
 			{
-				"buffer_size": 1487,
+				"buffer_size": 1981,
 				"line_ending": "Unix"
 			}
 		},
@@ -619,7 +611,7 @@
 			"file": "Experiment/Quicksort/OpenMP/Makefile",
 			"settings":
 			{
-				"buffer_size": 58,
+				"buffer_size": 87,
 				"line_ending": "Unix"
 			}
 		},
@@ -627,7 +619,15 @@
 			"file": "Experiment/MatrixMul/Pthreads/matmul_pthread.c",
 			"settings":
 			{
-				"buffer_size": 2279,
+				"buffer_size": 2281,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Experiment/MatrixMul/Pthreads/calculate.py",
+			"settings":
+			{
+				"buffer_size": 354,
 				"line_ending": "Unix"
 			}
 		},
@@ -635,7 +635,7 @@
 			"file": "Experiment/Quicksort/Sequential/Makefile",
 			"settings":
 			{
-				"buffer_size": 47,
+				"buffer_size": 76,
 				"line_ending": "Unix"
 			}
 		},
@@ -643,7 +643,7 @@
 			"file": "Experiment/Quicksort/Pthreads/Makefile",
 			"settings":
 			{
-				"buffer_size": 57,
+				"buffer_size": 87,
 				"line_ending": "Unix"
 			}
 		}
@@ -695,13 +695,9 @@
 	[
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/lib",
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Mandelbrot",
 		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/OpenMP",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Pthreads",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/MatrixMul/Seq",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort",
-		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort/OpenMP"
+		"/Users/Henrik/Google Drive/Henrik Swahn/Skola/Year3/ExJobb/Experiment/Quicksort"
 	],
 	"file_history":
 	[
@@ -927,7 +923,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -936,15 +932,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1382,
+						"buffer_size": 1808,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1381,
-								1381
+								1807,
+								0
 							]
 						],
 						"settings":
@@ -953,10 +949,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 833.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -965,15 +961,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2463,
+						"buffer_size": 4836,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								853,
-								853
+								777,
+								777
 							]
 						],
 						"settings":
@@ -983,10 +979,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 61.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -995,7 +991,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1833,
+						"buffer_size": 1835,
 						"regions":
 						{
 						},
@@ -1013,10 +1009,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 75.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1025,7 +1021,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 319,
+						"buffer_size": 354,
 						"regions":
 						{
 						},
@@ -1045,44 +1041,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "Experiment/MatrixMul/OpenMP/Makefile",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 87,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "Experiment/MatrixMul/Pthreads/result.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 905,
+						"buffer_size": 148,
 						"regions":
 						{
 						},
@@ -1090,7 +1058,7 @@
 						[
 							[
 								0,
-								905
+								148
 							]
 						],
 						"settings":
@@ -1101,11 +1069,11 @@
 						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "Experiment/MatrixMul/OpenMP/result.txt",
 					"semi_transient": false,
 					"settings":
@@ -1129,11 +1097,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "Experiment/MatrixMul/Seq/matmul_seq.c",
 					"semi_transient": false,
 					"settings":
@@ -1145,8 +1113,8 @@
 						"selection":
 						[
 							[
-								366,
-								366
+								1479,
+								1460
 							]
 						],
 						"settings":
@@ -1159,11 +1127,11 @@
 						"translation.y": 782.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "Experiment/MatrixMul/Seq/result.txt",
 					"semi_transient": false,
 					"settings":
@@ -1184,19 +1152,19 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "Experiment/lib/helpers/helpers.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 723,
+						"buffer_size": 937,
 						"regions":
 						{
 						},
@@ -1216,16 +1184,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "Experiment/lib/helpers/helpers.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 313,
+						"buffer_size": 364,
 						"regions":
 						{
 						},
@@ -1244,24 +1212,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "Experiment/Quicksort/OpenMP/quicksort.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1487,
+						"buffer_size": 1981,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								312,
-								337
+								1414,
+								1414
 							]
 						],
 						"settings":
@@ -1270,27 +1238,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 765.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "Experiment/Quicksort/OpenMP/Makefile",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 58,
+						"buffer_size": 87,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								58,
-								44
+								87,
+								87
 							]
 						],
 						"settings":
@@ -1301,24 +1269,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 12,
 					"file": "Experiment/MatrixMul/Pthreads/matmul_pthread.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2279,
+						"buffer_size": 2281,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2027,
-								2027
+								361,
+								361
 							]
 						],
 						"settings":
@@ -1328,10 +1296,38 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1360.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "Experiment/MatrixMul/Pthreads/calculate.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1340,15 +1336,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47,
+						"buffer_size": 76,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47,
-								47
+								60,
+								60
 							]
 						],
 						"settings":
@@ -1359,7 +1355,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1368,15 +1364,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 57,
+						"buffer_size": 87,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								57,
-								57
+								70,
+								70
 							]
 						],
 						"settings":
@@ -1387,7 +1383,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
