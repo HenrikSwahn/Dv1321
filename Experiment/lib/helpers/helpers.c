@@ -45,3 +45,28 @@ void logOrder(int arr[], int size) {
 	}
 	fclose(f);
 }
+
+void drawMandel(char * filename, int width, int height, int * map) {
+	FILE *f;
+	int i,j;
+	char buffer[50];
+	f = fopen(filename,"wb");
+	fwrite("\x00\x00\x02",sizeof(char),3,f);
+	fwrite("\x00\x00\x00\x00\x00",sizeof(char),5,f);
+	fwrite("\x00\x00",sizeof(char),2,f);
+	fwrite("\x00\x00",sizeof(char),2,f);
+	sprintf(buffer,"%c%c",(width & 0x00ff)%0xff,(width & 0xff00)%0xff);
+	fwrite(buffer,sizeof(char),2,f);
+	sprintf(buffer,"%c%c",(height & 0x00ff)%0xff,(height & 0xff00)%0xff);
+	fwrite(buffer,sizeof(char),2,f);
+	fwrite("\x18\x00",sizeof(char),2,f);
+
+	for (i = height-1; i >= 0; i--) {
+		for (j = 0; j < width; j++) {
+			sprintf(buffer, "%c%c%c",(map[j+(i)*width]>>16)&0x000000ff,(map[j+i*width]>>8)&0x000000ff,(map[j+i*width])&0x000000ff);
+			fwrite(buffer,sizeof(char),3,f);
+		}
+	}
+
+	fclose(f);
+}

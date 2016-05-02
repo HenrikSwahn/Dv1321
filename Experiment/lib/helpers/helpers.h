@@ -11,4 +11,5 @@ void logResult(struct timespec s, struct timespec e);
 void removeResultFile();
 void removeOrderFile();
 void logOrder(int[], int);
+void drawMandel(char * filename, int width, int height, int * map);
 #endif

@@ -2,69 +2,53 @@
 #include <math.h>
 #include <stdlib.h>
 
-#define HEIGHT 1024
-#define WIDTH 1024
-#define SIZE 1024
-#define MAX 30
+#define HEIGHT 4096
+#define WIDTH 4096
+#define MAX 1500
 
-typedef struct {
-	unsigned x;
-	unsigned y;
-	unsigned n;
-} Point;
-
-static Point * points;
-static unsigned counter;
-
-Point createPoint(unsigned y, unsigned x, unsigned n) {
-	Point point;
-	point.x = x;
-	point.y = y;
-	point.n = n;
-	return point;	
-}
-
-void draw() {
-	
-}
+static unsigned int* map;
 
 void mandelbrot() {
-
-	double minRe = -2.0;
-	double maxRe = 1.0;
-	double minLm = -1.2;
-	double maxLm = minLm + (maxRe - minRe) * HEIGHT / WIDTH;
-	double reFactor = (maxRe - minRe) / (WIDTH-1);
-	double lmFactor = (maxLm - minLm) / (HEIGHT-1);
 	
-	unsigned y;
-	for(y = 0; y < HEIGHT; y++) {
-		double h = minLm - y * lmFactor;
-		unsigned x;
-		for(x = 0; x < WIDTH; x++) {
-			double w = minRe + x * reFactor;
-			double zw = w, zh = h, inside = 1;
-			unsigned n;
-			for(n = 0; n < MAX; n++) {
-				double zw2 = zw * zw, zh2 = zh * zh;
-				if(((zw2 + zh2) > 4)) {
-					inside = 0;
+	int i, j;
+	double x_min = -1.6f;
+	double x_max = 1.6f;
+	double y_min = -1.6f;
+	double y_max = 1.6f;
+
+	for (i = 0; i < HEIGHT; i++) {
+		for (j = 0; j < WIDTH; j++) {
+			double b = x_min + j * (x_max - x_min) / WIDTH;
+			double a = y_min + i * (y_max - y_min) / HEIGHT;
+
+			double sx = 0.0f;
+			double sy = 0.0f;
+			int iterations = 0;
+			
+			while (sx + sy <= 64.0f) {
+				float xn = sx * sx - sy * sy + b;
+				float yn = 2 * sx * sy + a;
+				sx = xn;
+				sy = yn;
+				iterations++;
+				if (iterations == MAX)	{
 					break;
 				}
-				zh = 2 * zw * zh + h;
-				zw = zw2 - zh2 + w;
 			}
-			if(inside == 1) {
-				points[counter++] = createPoint(y,x,n);		
+
+			if (iterations == MAX)	{
+				map[j + i * WIDTH] = 0;
+			}
+			else {
+				map[j + i * WIDTH] = 0xffffff;
 			}
 		}
-	}	
+	}
 }
 
 int main() {
-	points = malloc(SIZE * sizeof(Point));
-	counter = 0;
+	map = malloc(WIDTH * HEIGHT * sizeof(int));
 	mandelbrot();
-	draw();
-	free(points);
+	drawMandel("frac.tga", WIDTH, HEIGHT, map);
+	free(map);
 }
