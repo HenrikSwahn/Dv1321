@@ -10,3 +10,4 @@ Experiment/MatrixMul/Pthreads/calculate.py
 Experiment/Quicksort/Pthreads/result.txt
 Experiment/Quicksort/Sequential/controll.py
 *.txt
+*.tga

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define HEIGHT 4096
 #define WIDTH 4096
@@ -47,8 +48,16 @@ void mandelbrot() {
 }
 
 int main() {
-	map = malloc(WIDTH * HEIGHT * sizeof(int));
-	mandelbrot();
-	drawMandel("frac.tga", WIDTH, HEIGHT, map);
-	free(map);
+	int l;
+    for(l = 0; l < 10; l++) {
+        map = malloc(WIDTH * HEIGHT * sizeof(int));
+        struct timespec brotStart, brotEnd;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
+		mandelbrot();
+		//drawMandel("frac.tga", WIDTH, HEIGHT, map);
+		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
+        printTimespec(brotStart, brotEnd, "mandelbrot set");
+        logResult(brotStart, brotEnd);
+		free(map);
+	}
 }
