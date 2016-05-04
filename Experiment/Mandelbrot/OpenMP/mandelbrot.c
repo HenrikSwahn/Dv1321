@@ -4,8 +4,9 @@
 #include <omp.h>
 #include <time.h>
 
-#define HEIGHT 4096
-#define WIDTH 4096
+#define L 2000
+#define HEIGHT L
+#define WIDTH L
 #define MAX 1500
 
 static unsigned int* map;
@@ -18,7 +19,7 @@ void mandelbrot() {
     double y_min = -1.6f;
     double y_max = 1.6f;
 
-    #pragma omp parallel shared(map,x_min, x_max, y_min, y_max) private(i,j) num_threads(4)
+    #pragma omp parallel shared(map,x_min, x_max, y_min, y_max) private(i,j) num_threads(8)
     {
         #pragma omp for schedule(static)
         for (i = 0; i < HEIGHT; i++) {
@@ -53,14 +54,15 @@ void mandelbrot() {
 }
 
 int main() {
+	removeResultFile();
     int l;
     for(l = 0; l < 10; l++) {
         map = malloc(WIDTH * HEIGHT * sizeof(int));
         struct timespec brotStart, brotEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
+        clock_gettime(CLOCK_REALTIME, &brotStart);
         mandelbrot();
         //drawMandel("frac.tga", WIDTH, HEIGHT, map);
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
+        clock_gettime(CLOCK_REALTIME, &brotEnd);
         printTimespec(brotStart, brotEnd, "mandelbrot set");
         logResult(brotStart, brotEnd);
         free(map);

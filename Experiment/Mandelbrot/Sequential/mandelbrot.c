@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define LOL 2000
+#define LOL 10000
 #define HEIGHT LOL
 #define WIDTH LOL
 #define MAX 1500

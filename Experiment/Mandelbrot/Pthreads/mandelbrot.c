@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define L 1300.0
+#define L 2000
 #define HEIGHT L
 #define WIDTH L
 #define MAX 1500
@@ -81,7 +81,7 @@ int main() {
 	for(l = 0; l < 10; l++) {
 		map = malloc(WIDTH * HEIGHT * sizeof(int));
 		struct timespec brotStart, brotEnd;
-	        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
+	        clock_gettime(CLOCK_REALTIME, &brotStart);
 		int i, counter = 0;
 		double x = 0, y = 0;
 		for(i = 0.0; i < MAX_THREADS*2; i++) {
@@ -99,7 +99,7 @@ int main() {
 				x += T;
 			}
 		}
-		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
+		clock_gettime(CLOCK_REALTIME, &brotEnd);
        		printTimespec(brotStart, brotEnd, "mandelbrot set");
 	        logResult(brotStart, brotEnd);
 		//drawMandel("frac.tga", (int)WIDTH, (int)HEIGHT, map);
