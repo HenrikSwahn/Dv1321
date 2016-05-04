@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define HEIGHT 4096
-#define WIDTH 4096
+#define LOL 2000
+#define HEIGHT LOL
+#define WIDTH LOL
 #define MAX 1500
 
 static unsigned int* map;
@@ -48,16 +49,16 @@ void mandelbrot() {
 }
 
 int main() {
+	removeResultFile();
 	int l;
-    for(l = 0; l < 10; l++) {
-        map = malloc(WIDTH * HEIGHT * sizeof(int));
-        struct timespec brotStart, brotEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
-		mandelbrot();
-		//drawMandel("frac.tga", WIDTH, HEIGHT, map);
+   	for(l = 0; l < 10; l++) {
+        	map = malloc(WIDTH * HEIGHT * sizeof(int));
+        	struct timespec brotStart, brotEnd;
+       	 	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
+		mandelbrot();	
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
-        printTimespec(brotStart, brotEnd, "mandelbrot set");
-        logResult(brotStart, brotEnd);
+        	printTimespec(brotStart, brotEnd, "mandelbrot set");
+        	logResult(brotStart, brotEnd);
 		free(map);
 	}
 }

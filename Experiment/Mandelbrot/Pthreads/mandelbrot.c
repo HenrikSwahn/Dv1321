@@ -76,11 +76,12 @@ Args * create_args(int x, int y, double w, double h) {
 }
 
 int main() {
+	removeResultFile();
 	int l;
-	//for(l = 0; l < 10; l++) {
+	for(l = 0; l < 10; l++) {
 		map = malloc(WIDTH * HEIGHT * sizeof(int));
 		struct timespec brotStart, brotEnd;
-        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
+	        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
 		int i, counter = 0;
 		double x = 0, y = 0;
 		for(i = 0.0; i < MAX_THREADS*2; i++) {
@@ -99,9 +100,10 @@ int main() {
 			}
 		}
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
-        printTimespec(brotStart, brotEnd, "mandelbrot set");
-        logResult(brotStart, brotEnd);
-		drawMandel("frac.tga", (int)WIDTH, (int)HEIGHT, map);
+       		printTimespec(brotStart, brotEnd, "mandelbrot set");
+	        logResult(brotStart, brotEnd);
+		//drawMandel("frac.tga", (int)WIDTH, (int)HEIGHT, map);
 		free(map);
-	//}
+	}
 }
+
