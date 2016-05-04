@@ -3,24 +3,28 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define HEIGHT 4096
-#define WIDTH 4096
+#define L 1300.0
+#define HEIGHT L
+#define WIDTH L
 #define MAX 1500
-#define MAX_THREADS 4
+#define MAX_THREADS 8
+#define T HEIGHT/MAX_THREADS
 
 typedef struct {
 	int x;
 	int y;
-	int size;
+	double h;
+	double w;
 } Args;
 
 static unsigned int* map;
 
 pthread_t tid[MAX_THREADS];
 
-void mandelbrot(int x, int y, int size) {
+void mandelbrot(int x, int y, double w, double h) {
 	
-	int i, j, width = x + size, height = y + size;
+	int i, j;
+	double width = x + w, height = y + h;
 	double x_min = -1.6f;
 	double x_max = 1.6f;
 	double y_min = -1.6f;
@@ -47,10 +51,10 @@ void mandelbrot(int x, int y, int size) {
 			}
 
 			if (iterations == MAX)	{
-				map[j + i * WIDTH] = 0;
+				map[(int)(j + i * WIDTH)] = 0;
 			}
 			else {
-				map[j + i * WIDTH] = 0xffffff;
+				map[(int)(j + i * WIDTH)] = 0xffffff;
 			}
 		}
 	}
@@ -58,13 +62,14 @@ void mandelbrot(int x, int y, int size) {
 
 void * worker(void * args) {
 	Args * arg = args;
-	mandelbrot(arg->x, arg->y, arg->size);
+	mandelbrot(arg->x, arg->y, arg->w, arg->h);
 	free(arg);
 }
 
-Args * create_args(int x, int y, int size) {
+Args * create_args(int x, int y, double w, double h) {
 	Args * args = malloc(sizeof(Args));
-	args->size = size;
+	args->w = w;
+	args->h = h;
 	args->x = x;
 	args->y = y;
 	return args;
@@ -72,34 +77,31 @@ Args * create_args(int x, int y, int size) {
 
 int main() {
 	int l;
-	for(l = 0; l < 10; l++) {
+	//for(l = 0; l < 10; l++) {
 		map = malloc(WIDTH * HEIGHT * sizeof(int));
 		struct timespec brotStart, brotEnd;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotStart);
-		int i, counter = 0, x = 0, y = 0, size = HEIGHT / MAX_THREADS;
-		for(i = 0; i < MAX_THREADS*4; i++) {
-			pthread_create(&tid[counter++], NULL, worker, create_args(x,y, size));
-			
-			if(x == (WIDTH-size)) {
-				x = 0;
-				y += size;
-			}
-			else {
-				x += size;
-			}
-
+		int i, counter = 0;
+		double x = 0, y = 0;
+		for(i = 0.0; i < MAX_THREADS*2; i++) {
+			pthread_create(&tid[counter++], NULL, worker, create_args(x,y, T, HEIGHT/2));
 			if(counter == MAX_THREADS) {
 				counter = 0;
+				x = 0;
+				y += HEIGHT/2;
 				int j;
 				for(j = 0; j < MAX_THREADS; j++) {
 					pthread_join(tid[j], NULL);
 				}
 			}
+			else {
+				x += T;
+			}
 		}
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &brotEnd);
         printTimespec(brotStart, brotEnd, "mandelbrot set");
         logResult(brotStart, brotEnd);
-		//drawMandel("frac.tga", WIDTH, HEIGHT, map);
+		drawMandel("frac.tga", (int)WIDTH, (int)HEIGHT, map);
 		free(map);
-	}
+	//}
 }
